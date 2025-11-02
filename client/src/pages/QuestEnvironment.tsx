@@ -69,7 +69,7 @@ export default function QuestEnvironment() {
         },
         "weekly-2": {
           title: "Refer 3 New Users",
-          description: "Invite 3 friends to join QUESTFLOW",
+          description: "Invite 3 friends to join Nexura",
           type: "Weekly Quest",
           reward: "2.0 tTRUST",
           timeLeft: "4d 12h"

@@ -56,5 +56,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   const httpServer = createServer(app);
 
+  // Simple leaderboard endpoint (mocked). In a production app this would query storage/db.
+  // Leaderboard endpoint: when DB/backend not ready, return 204 No Content so frontend doesn't show demo data
+  app.get("/api/leaderboard", async (req, res) => {
+    try {
+      // TODO: replace with real storage/db query when backend is ready.
+      // For now return 204 to indicate no content (frontend will render nothing).
+      res.status(204).end();
+    } catch (error) {
+      console.error("Error fetching leaderboard:", error);
+      res.status(500).json({ error: "Failed to fetch leaderboard" });
+    }
+  });
+
   return httpServer;
 }

@@ -338,7 +338,7 @@
   }
 }
 
-/* 3D Hexagonal Design for Layer3 */
+/* 3D Hexagonal Design for Nexura */
 .clip-hexagon {
   clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
 }

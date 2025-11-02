@@ -158,7 +158,7 @@ export default function Campaigns() {
         <div>
           <h1 className="text-3xl font-bold text-foreground mb-2">Campaigns</h1>
           <p className="text-muted-foreground">
-            Join unique project campaigns and contribute to the growth of the QUESTFLOW ecosystem
+            Join unique project campaigns and contribute to the growth of the Nexura ecosystem
           </p>
         </div>
 
@@ -212,7 +212,7 @@ export default function Campaigns() {
                 <p className="text-sm text-muted-foreground">
                   Campaigns are unique, project-specific initiatives that allow you to contribute to ecosystem growth. 
                   Unlike daily quests, campaigns have specific durations, larger reward pools, and focus on meaningful 
-                  contributions to the QUESTFLOW ecosystem and partner projects.
+                  contributions to the Nexura ecosystem and partner projects.
                 </p>
               </div>
             </div>

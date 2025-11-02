@@ -23,7 +23,7 @@ const tierData = [
   {
     key: "enchanter" as const,
     name: "Enchanter",
-    description: "Begin your journey in the QUESTFLOW realm",
+  description: "Begin your journey in the Nexura realm",
     levelRange: "Level 0-5"
   },
   {
@@ -47,7 +47,7 @@ const tierData = [
   {
     key: "templar" as const,
     name: "Templar",
-    description: "The pinnacle of QUESTFLOW mastery",
+  description: "The pinnacle of Nexura mastery",
     levelRange: "Level 50+"
   }
 ];
@@ -70,9 +70,9 @@ export default function Tiers() {
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Header */}
         <div className="text-center space-y-4">
-          <h1 className="text-4xl font-bold text-foreground">QUESTFLOW Tiers</h1>
+          <h1 className="text-4xl font-bold text-foreground">Nexura Tiers</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Advance through five distinct tiers of mastery in the QUESTFLOW ecosystem.
+            Advance through five distinct tiers of mastery in the Nexura ecosystem.
           </p>
         </div>
 

@@ -18,15 +18,19 @@ import Profile from "@/pages/Profile";
 import EditProfile from "@/pages/EditProfile";
 import Achievements from "@/pages/Achievements";
 import Tiers from "@/pages/Tiers";
-import QuestflowSidebar from "@/components/QuestflowSidebar";
+import Leaderboard from "@/pages/Leaderboard";
+import Projects from "@/pages/Projects";
+import NexuraSidebar from "@/components/QuestflowSidebar";
 import ProfileBar from "@/components/ProfileBar";
+import { WalletProvider } from "@/lib/wallet";
+import OrgSignInButton from "@/components/OrgSignInButton";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Discover} />
       <Route path="/discover" component={Discover} />
-      {/* QUESTFLOW pages */}
+  {/* NEXURA pages */}
       <Route path="/learn" component={Learn} />
       <Route path="/quests" component={Quests} />
       <Route path="/campaigns" component={Campaigns} />
@@ -39,6 +43,9 @@ function Router() {
       <Route path="/profile/edit" component={EditProfile} />
       <Route path="/achievements" component={Achievements} />
       <Route path="/tiers" component={Tiers} />
+  <Route path="/leaderboard" component={Leaderboard} />
+    {/* Developer pages */}
+    <Route path="/projects" component={Projects} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>
@@ -46,7 +53,7 @@ function Router() {
 }
 
 function App() {
-  // QUESTFLOW-style sidebar configuration
+  // NEXURA-style sidebar configuration
   const sidebarStyle = {
     "--sidebar-width": "18rem",
     "--sidebar-width-icon": "4rem",
@@ -54,25 +61,28 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <SidebarProvider style={sidebarStyle as React.CSSProperties}>
-          <div className="flex h-screen w-full bg-background">
-            <QuestflowSidebar />
-            <div className="flex flex-col flex-1">
-              {/* Top Header with Profile Bar */}
-              <header className="flex items-center justify-between p-3 border-b border-border bg-background">
-                <SidebarTrigger data-testid="button-sidebar-toggle" />
-                <ProfileBar />
-              </header>
-              {/* Main Content with Better Scrolling */}
-              <main className="flex-1 overflow-y-auto">
-                <Router />
-              </main>
+      <WalletProvider>
+        <TooltipProvider>
+          <SidebarProvider style={sidebarStyle as React.CSSProperties}>
+            <div className="flex h-screen w-full bg-background">
+              <NexuraSidebar />
+              <div className="flex flex-col flex-1">
+                {/* Top Header with Profile Bar */}
+                <header className="flex items-center justify-between p-3 border-b border-border bg-background">
+                  <SidebarTrigger data-testid="button-sidebar-toggle" />
+                  <ProfileBar />
+                </header>
+                {/* Main Content with Better Scrolling */}
+                <main className="flex-1 overflow-y-auto">
+                  <Router />
+                </main>
+              </div>
+              <OrgSignInButton />
             </div>
-          </div>
-        </SidebarProvider>
-        <Toaster />
-      </TooltipProvider>
+          </SidebarProvider>
+          <Toaster />
+        </TooltipProvider>
+      </WalletProvider>
     </QueryClientProvider>
   );
 }

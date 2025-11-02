@@ -139,7 +139,7 @@ export class MemStorage implements IStorage {
       totalReferrals,
       totalEarned,
       claimableRewards,
-      referralLink: `https://questflow.com/ref/${userId}`,
+      referralLink: `https://nexura.com/ref/${userId}`,
     };
   }
 }

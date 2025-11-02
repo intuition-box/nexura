@@ -9,8 +9,8 @@ export default function HeroSection() {
       <div className="max-w-7xl mx-auto">
         {/* Main Hero */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4" data-testid="hero-title">
-            Grow with Layer3
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4" data-testid="hero-title">
+            Grow with Nexura
           </h1>
           <p className="text-xl text-muted-foreground mb-8" data-testid="hero-subtitle">
             Create impact onchain and earn
@@ -29,7 +29,7 @@ export default function HeroSection() {
         {/* Featured Quest Card */}
         <Card className="max-w-2xl mx-auto p-8 bg-card/50 backdrop-blur-sm border-card-border hover-elevate" data-testid="featured-quest-card">
           <div className="flex items-start space-x-4">
-            <img src={layer3Logo} alt="Layer3" className="w-16 h-16 rounded-full" />
+            <img src={layer3Logo} alt="Nexura" className="w-16 h-16 rounded-full" />
             <div className="flex-1">
               <div className="flex items-center space-x-2 mb-2">
                 <span className="bg-accent/20 text-accent px-2 py-1 rounded text-sm font-medium">

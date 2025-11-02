@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useWallet } from "@/hooks/use-wallet";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -26,7 +27,21 @@ const TIER_COLORS = {
 };
 
 export default function Profile() {
-  // Mock user data - in real app this would come from API/auth
+  const { isConnected } = useWallet();
+
+  // If user is not connected, do not show demo/profile mock data
+  if (!isConnected) {
+    return (
+      <div className="min-h-screen bg-background overflow-auto p-6" data-testid="profile-page">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-2xl font-bold">My Profile</h1>
+          <div className="mt-6 text-sm text-muted-foreground">Connect your wallet to view your profile and stats.</div>
+        </div>
+      </div>
+    );
+  }
+
+  // Mock user data - when connected, app would fetch real user data from API
   const [userData] = useState({
     username: "0xD524...9779",
     displayName: "0xD524...9779",

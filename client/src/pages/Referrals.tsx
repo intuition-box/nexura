@@ -93,7 +93,7 @@ export default function Referrals() {
         <div className="text-center">
           <h1 className="text-3xl font-bold text-foreground mb-2">Referral Program</h1>
           <p className="text-muted-foreground">
-            Invite friends to QUESTFLOW and earn tTRUST rewards together
+            Invite friends to Nexura and earn tTRUST rewards together
           </p>
         </div>
 
@@ -252,7 +252,7 @@ export default function Referrals() {
                 </div>
                 <h4 className="font-semibold">They Join</h4>
                 <p className="text-sm text-muted-foreground">
-                  Your friends sign up and start their QUESTFLOW journey
+                  Your friends sign up and start their Nexura journey
                 </p>
               </div>
 

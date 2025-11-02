@@ -226,7 +226,7 @@ export default function Discover() {
     {
       author: "CommunityLead",
       avatar: avatar5,
-      content: "The QUESTFLOW platform integration with Intuition creates a seamless experience for both quest completion and reputation building. Great UX design!",
+  content: "The Nexura platform integration with Intuition creates a seamless experience for both quest completion and reputation building. Great UX design!",
       timeAgo: "10 hours ago",
       attestations: 19,
       tTrustEarned: "6.8",

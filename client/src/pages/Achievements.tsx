@@ -29,7 +29,7 @@ export default function Achievements() {
         <div>
           <h1 className="text-3xl font-bold text-foreground mb-2">Levels</h1>
           <p className="text-muted-foreground">
-            Complete campaigns and quests on QuestFlow to level up on Intuition Ecosystem — and celebrate your onchain achievements.
+            Complete campaigns and quests on Nexura to level up on Intuition Ecosystem — and celebrate your onchain achievements.
           </p>
         </div>
 

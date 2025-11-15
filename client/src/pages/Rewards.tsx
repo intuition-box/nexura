@@ -42,7 +42,7 @@ export default function Rewards() {
       <div className="max-w-6xl mx-auto space-y-8">
         {/* Header */}
         <div>
-          <h1 className="text-3xl font-bold text-foreground mb-2">Your earnings on QUESTFLOW</h1>
+          <h1 className="text-3xl font-bold text-foreground mb-2">Your earnings on Nexura</h1>
           <div className="text-2xl font-bold text-foreground">0 tTRUST</div>
         </div>
 
@@ -50,7 +50,7 @@ export default function Rewards() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card data-testid="card-incentives">
             <CardHeader className="pb-3">
-              <CardTitle className="text-sm font-medium text-muted-foreground">QF Incentives</CardTitle>
+              <CardTitle className="text-sm font-medium text-muted-foreground">Nexura Incentives</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{userEarnings.incentives} tTRUST</div>

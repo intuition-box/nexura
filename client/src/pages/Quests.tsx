@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Calendar, Clock, Trophy, Target, CheckCircle, Plus } from "lucide-react";
 import { useLocation } from "wouter";
+import AuthGuard from "@/components/AuthGuard";
 import dailyQuestImg from "@assets/generated_images/Daily_Quest_Completion_Image_83de888a.png";
 import gettingStartedImg from "@assets/generated_images/Getting_Started_Quest_Image_9a7ae50b.png";
 
@@ -153,7 +154,8 @@ export default function Quests() {
   );
 
   return (
-    <div className="min-h-screen bg-background overflow-auto p-6" data-testid="quests-page">
+    <AuthGuard>
+      <div className="min-h-screen bg-background overflow-auto p-6" data-testid="quests-page">
       <div className="max-w-6xl mx-auto space-y-8">
         {/* Header */}
         <div>
@@ -250,7 +252,7 @@ export default function Quests() {
             <div>
               <h2 className="text-xl font-bold text-foreground mb-4">One Time Quests</h2>
               <p className="text-sm text-muted-foreground mb-6">
-                Complete these essential quests to unlock the full QUESTFLOW experience
+                Complete these essential quests to unlock the full Nexura experience
               </p>
             </div>
             
@@ -314,6 +316,7 @@ export default function Quests() {
           </TabsContent>
         </Tabs>
       </div>
-    </div>
+      </div>
+    </AuthGuard>
   );
 }

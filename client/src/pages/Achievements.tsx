@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { useAuth } from "@/lib/auth";
 
 // Level achievement data
 const levelAchievements = [
@@ -19,8 +20,21 @@ const levelAchievements = [
 ];
 
 export default function Achievements() {
-  const [userXp] = useState(175); // Mock user XP
-  const [userLevel] = useState(8); // Mock user level
+  const { user } = useAuth();
+
+  if (!user) {
+    return (
+      <div className="min-h-screen bg-background overflow-auto p-6">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-3xl font-bold text-foreground mb-2">Levels</h1>
+          <p className="text-muted-foreground">No achievement data available.</p>
+        </div>
+      </div>
+    );
+  }
+
+  const userXp = user.xp ?? 0;
+  const userLevel = user.level ?? 0;
 
   return (
     <div className="min-h-screen bg-background overflow-auto p-6" data-testid="achievements-page">
@@ -29,7 +43,7 @@ export default function Achievements() {
         <div>
           <h1 className="text-3xl font-bold text-foreground mb-2">Levels</h1>
           <p className="text-muted-foreground">
-            Complete campaigns and quests on QuestFlow to level up on Intuition Ecosystem — and celebrate your onchain achievements.
+            Complete campaigns and quests on Nexura to level up on Intuition Ecosystem — and celebrate your onchain achievements.
           </p>
         </div>
 

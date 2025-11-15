@@ -7,24 +7,29 @@ import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { apiRequest, queryClient } from "@/lib/queryClient";
+import { useAuth } from "@/lib/auth";
 import type { ReferralStats } from "@shared/schema";
 
 export default function Referrals() {
   const { toast } = useToast();
   const [copied, setCopied] = useState(false);
 
-  // Mock user ID - in real app this would come from authentication
-  const userId = "user-123";
+  const { user } = useAuth();
+  const userId = user ? (user._id ?? user.id ?? user.userId ?? null) : null;
 
-  // Fetch referral stats from API
   const { data: referralStats, isLoading } = useQuery<ReferralStats>({
-    queryKey: ['/api/referrals/stats', userId],
-    queryFn: () => fetch(`/api/referrals/stats/${userId}`).then(res => res.json()),
+    queryKey: userId ? ['/api/referrals/stats', userId] : ['referrals', 'none'],
+    enabled: Boolean(userId),
+    queryFn: async () => {
+      if (!userId) return null as unknown as ReferralStats;
+      const res = await apiRequest("GET", `/api/referrals/stats/${userId}`);
+      return res.json();
+    },
   });
 
   // Claim rewards mutation
   const claimMutation = useMutation({
-    mutationFn: () => apiRequest("POST", `/api/referrals/claim/${userId}`),
+  mutationFn: () => apiRequest("POST", `/api/referrals/claim/${userId}`),
     onSuccess: (data) => {
       console.log("Claim successful:", data);
       queryClient.invalidateQueries({ queryKey: ['/api/referrals/stats', userId] });
@@ -65,6 +70,16 @@ export default function Referrals() {
     (referralStats.totalReferrals >= 3 ? 10 : 3);
   const progress = !referralStats ? 0 : (referralStats.totalReferrals / nextMilestone) * 100;
 
+  if (!userId) {
+    return (
+      <div className="min-h-screen bg-background overflow-auto p-6 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-muted-foreground">No referral data available</p>
+        </div>
+      </div>
+    );
+  }
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-background overflow-auto p-6 flex items-center justify-center">
@@ -93,7 +108,7 @@ export default function Referrals() {
         <div className="text-center">
           <h1 className="text-3xl font-bold text-foreground mb-2">Referral Program</h1>
           <p className="text-muted-foreground">
-            Invite friends to QUESTFLOW and earn tTRUST rewards together
+            Invite friends to Nexura and earn tTRUST rewards together
           </p>
         </div>
 
@@ -252,7 +267,7 @@ export default function Referrals() {
                 </div>
                 <h4 className="font-semibold">They Join</h4>
                 <p className="text-sm text-muted-foreground">
-                  Your friends sign up and start their QUESTFLOW journey
+                  Your friends sign up and start their Nexura journey
                 </p>
               </div>
 

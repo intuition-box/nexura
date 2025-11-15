@@ -7,6 +7,7 @@ import { randomUUID } from "crypto";
 export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
+  getUserByAddress(address: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
   
   // Referral system methods
@@ -66,6 +67,12 @@ export class MemStorage implements IStorage {
   async getUserByUsername(username: string): Promise<User | undefined> {
     return Array.from(this.users.values()).find(
       (user) => user.username === username,
+    );
+  }
+
+  async getUserByAddress(address: string): Promise<User | undefined> {
+    return Array.from(this.users.values()).find(
+      (user) => (user as any).address?.toLowerCase() === address?.toLowerCase(),
     );
   }
 
@@ -139,7 +146,7 @@ export class MemStorage implements IStorage {
       totalReferrals,
       totalEarned,
       claimableRewards,
-      referralLink: `https://questflow.com/ref/${userId}`,
+      referralLink: `https://nexura.com/ref/${userId}`,
     };
   }
 }

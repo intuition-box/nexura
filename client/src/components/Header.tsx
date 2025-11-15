@@ -6,6 +6,7 @@ export default function Header() {
   const navItems = [
     { label: "Learn", href: "/learn", tag: "Free to use", implemented: false },
     { label: "Discover & Earn", href: "/", active: true, implemented: true },
+    { label: "Projects", href: "/projects", implemented: true },
     { label: "Community", href: "/community", implemented: false },
     { label: "Rewards", href: "/rewards", implemented: false },
     { label: "Signal", href: "/signal", implemented: false },
@@ -23,8 +24,8 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2" data-testid="link-home">
-            <img src={layer3Logo} alt="Layer3" className="w-8 h-8 rounded-full" />
-            <span className="text-xl font-bold text-foreground">Layer3</span>
+            <img src={layer3Logo} alt="Nexura" className="w-8 h-8 rounded-full" />
+            <span className="text-xl font-bold text-foreground">Nexura</span>
           </Link>
 
           {/* Navigation */}

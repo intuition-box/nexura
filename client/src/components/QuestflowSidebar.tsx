@@ -11,6 +11,7 @@ import {
   BookOpen, 
   Compass, 
   Users, 
+  Trophy,
   Zap, 
   Calendar, 
   Target, 
@@ -55,10 +56,17 @@ const mainNavItems = [
     href: "/ecosystem-dapps",
     activeClass: "nav-ecosystem-dapps-active"
   }
+  ,
+  {
+    title: "Leaderboard",
+    icon: Trophy,
+    href: "/leaderboard",
+    activeClass: "nav-leaderboard-active"
+  }
 ];
 
 
-export default function QuestflowSidebar() {
+export default function NexuraSidebar() {
   const [location] = useLocation();
 
   return (
@@ -71,8 +79,8 @@ export default function QuestflowSidebar() {
               <span className="text-primary-foreground font-bold text-sm">QF</span>
             </div>
             <div className="flex flex-col font-bold text-lg text-foreground">
-              <span>QUEST</span>
-              <span className="ml-4">FLOW</span>
+              <span>NEX</span>
+              <span className="ml-4">URA</span>
             </div>
           </div>
         </div>

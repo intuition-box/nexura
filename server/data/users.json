@@ -1,0 +1,26 @@
+{
+  "56d02704-a45b-4288-b196-9f27d9cb3900": {
+    "username": "0x7d6dd0ccb19c233782c8c27d918ecf6a9c4667a0",
+    "password": "0caf15e28108dea723759863",
+    "address": "0x7d6dd0ccb19c233782c8c27d918ecf6a9c4667a0",
+    "id": "56d02704-a45b-4288-b196-9f27d9cb3900"
+  },
+  "c913f6f6-e838-4593-b92d-2530b1681fc2": {
+    "username": "0x1111111111111111111111111111111111111111",
+    "password": "f6f0ec1ec273243cd8985c51",
+    "address": "0x1111111111111111111111111111111111111111",
+    "id": "c913f6f6-e838-4593-b92d-2530b1681fc2"
+  },
+  "707714cf-2caf-494a-b319-a6df76cff41d": {
+    "username": "0xdeadbeef",
+    "password": "018c73ab1df0a2455cc6173d",
+    "address": "0xdeadbeef",
+    "id": "707714cf-2caf-494a-b319-a6df76cff41d"
+  },
+  "d61271e3-f172-41b9-b453-3d7336c4be88": {
+    "username": "0x8af6e0b869b54805ad27ec58671c3cc179387d6f",
+    "password": "4b8303461e45bb96f546d51c",
+    "address": "0x8af6e0b869b54805ad27ec58671c3cc179387d6f",
+    "id": "d61271e3-f172-41b9-b453-3d7336c4be88"
+  }
+}

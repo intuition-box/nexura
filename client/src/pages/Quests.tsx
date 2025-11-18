@@ -19,28 +19,28 @@ export default function Quests() {
       id: "active-task-1",
       title: "Verify Your Identity",
       description: "Complete your identity verification process",
-      // reward: "10 XP + 0.5 tTRUST",
+      reward: "10 XP",
       completed: false
     },
     {
       id: "active-task-2", 
       title: "Join Community Discussion",
       description: "Participate in at least one community discussion",
-      // reward: "15 XP + 0.5 tTRUST",
+      reward: "15 XP",
       completed: false
     },
     {
       id: "active-task-3",
       title: "Share Intuition Project",
       description: "Share an Intuition project with the community",
-      // reward: "20 XP + 0.8 tTRUST",
+      reward: "20 XP",
       completed: false
     },
     {
       id: "active-task-4",
       title: "Create an Attestation",
       description: "Make your first attestation on the Intuition platform",
-      // reward: "25 XP + 1.0 tTRUST",
+      reward: "25 XP",
       completed: false
     }
   ];
@@ -50,21 +50,21 @@ export default function Quests() {
       id: "onetime-1",
       title: "Connect X",
       description: "Link your X account to verify your identity and join the community",
-      // reward: "25 XP + 1.0 tTRUST",
+      reward: "25 XP",
       completed: false
     },
     {
       id: "onetime-2",
       title: "Connect Discord",
       description: "Join our Discord community to access exclusive channels and updates",
-      // reward: "25 XP + 1.0 tTRUST",
+      reward: "25 XP + 1.0 tTRUST",
       completed: false
     },
     {
       id: "onetime-3",
       title: "Own a .trust domain",
       description: "Register your .trust domain to establish your presence on the Intuition network",
-      // reward: "50 XP + 2.0 tTRUST",
+      reward: "50 XP + 2.0 tTRUST",
       completed: false
     }
   ];
@@ -159,7 +159,7 @@ export default function Quests() {
         <div>
           <h1 className="text-3xl font-bold text-foreground mb-2">Quests</h1>
           <p className="text-muted-foreground">
-            Complete active (weekly) tasks and one-time quests to earn XP and tTRUST rewards
+            Complete active (weekly) tasks and one-time quests to earn XP 
           </p>
         </div>
 
@@ -181,7 +181,7 @@ export default function Quests() {
             <div>
               <h2 className="text-xl font-bold text-foreground mb-4">Active Tasks</h2>
               <p className="text-sm text-muted-foreground mb-6">
-                Complete these tasks weekly to earn XP and tTRUST • Resets every 7 days
+                Complete these tasks weekly to earn XP • Resets every 7 days
               </p>
             </div>
             
@@ -217,7 +217,7 @@ export default function Quests() {
                         onClick={() => handleClaimTask(task.id)}
                         data-testid={`claim-task-${task.id}`}
                       >
-                        {claimedTasks.includes(task.id) ? 'Completed' : 'Complete Task'}
+                        {claimedTasks.includes(task.id) ? 'Claimed' : 'Claim'}
                       </Button>
                     </div>
                   </div>
@@ -285,7 +285,7 @@ export default function Quests() {
                         onClick={() => handleClaimTask(quest.id)}
                         data-testid={`claim-quest-${quest.id}`}
                       >
-                        {claimedTasks.includes(quest.id) ? 'Completed' : 'Complete Task'}
+                        {claimedTasks.includes(quest.id) ? 'Claimed' : 'Claim'}
                       </Button>
                     </div>
                   </div>

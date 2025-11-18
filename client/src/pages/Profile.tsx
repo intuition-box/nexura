@@ -22,6 +22,7 @@ const userAnalytics = {
   level: 8,
   badges: 3,
   questsCompleted: 12,
+  rewardsEarned: 42,
   tTrustEarned: 6.0
 };
 
@@ -120,6 +121,7 @@ export default function Profile() {
             <Card><CardContent className="p-6"><p className="text-sm text-muted-foreground">Level</p><p className="text-2xl font-bold">{userAnalytics.level}</p></CardContent></Card>
             <Card><CardContent className="p-6"><p className="text-sm text-muted-foreground">Badges</p><p className="text-2xl font-bold">{userAnalytics.badges}</p></CardContent></Card>
             <Card><CardContent className="p-6"><p className="text-sm text-muted-foreground">Quests Completed</p><p className="text-2xl font-bold">{userAnalytics.questsCompleted}</p></CardContent></Card>
+            <Card><CardContent className="p-6"><p className="text-sm text-muted-foreground">Rewards Earned</p><p className="text-2xl font-bold">{userAnalytics.rewardsEarned}</p></CardContent></Card>
             <Card><CardContent className="p-6"><p className="text-sm text-muted-foreground">tTRUST Earned</p><p className="text-2xl font-bold">{userAnalytics.tTrustEarned}</p></CardContent></Card>
           </div>
         </section>

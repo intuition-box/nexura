@@ -1,4 +1,5 @@
 import { Switch, Route, useLocation } from "wouter";
+import { useEffect } from "react";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -25,10 +26,18 @@ import Leaderboard from "@/pages/Leaderboard";
 import QuestflowSidebar from "@/components/QuestflowSidebar";
 import ProfileBar from "@/components/ProfileBar";
 
+// Redirect component for root "/"
+function RedirectToHome() {
+  const [, setLocation] = useLocation();
+  useEffect(() => {
+    setLocation("/home");
+  }, [setLocation]);
+  return null;
+}
+
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
       <Route path="/home" component={Home} />
       <Route path="/discover" component={Discover} />
       <Route path="/learn" component={Learn} />
@@ -51,8 +60,8 @@ function Router() {
 function App() {
   const [location] = useLocation();
 
-  // Hide sidebar, header, ProfileBar on /home or root "/"
-  const hideLayout = location === "/home" || location === "/";
+  // Hide sidebar, header, ProfileBar on /home
+  const hideLayout = location === "/home";
 
   const sidebarStyle = {
     "--sidebar-width": "18rem",
@@ -78,6 +87,8 @@ function App() {
 
               {/* Main content */}
               <main className="flex-1 overflow-y-auto">
+                {/* Redirect root "/" visitors to /home */}
+                {location === "/" && <RedirectToHome />}
                 <Router />
               </main>
             </div>

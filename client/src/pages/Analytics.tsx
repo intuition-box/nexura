@@ -12,6 +12,7 @@ export default function Analytics() {
     level: 8,
     badges: 3, // Nexons
     questsCompleted: 12,
+    rewardsEarned: 42,
     tTrustEarned: 6.0
   };
 
@@ -105,6 +106,7 @@ export default function Analytics() {
                   <CardTitle className="text-sm font-medium text-muted-foreground">Rewards Earned</CardTitle>
                 </CardHeader>
                 <CardContent>
+                  <div className="text-2xl font-bold">{userData.rewardsEarned}</div>
                   <p className="text-xs text-muted-foreground">Total rewards</p>
                 </CardContent>
               </Card>

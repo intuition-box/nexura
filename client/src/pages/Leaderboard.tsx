@@ -114,10 +114,24 @@ export default function Leaderboard() {
                   </div>
 
                   {/* RIGHT: XP + tTrust */}
-                  <div className="flex items-center gap-6 font-semibold text-sm md:text-base text-primary">
-                    <div>⚡ {user.xp}</div>
-                    <div>🔰 {user.tTrust}</div>
-                  </div>
+                  <div className="flex items-center gap-4">
+
+  {/* XP Badge */}
+  <div className="flex items-center gap-1 bg-blue-600/20 border border-blue-500/30 px-3 py-1 rounded-full">
+    <span className="text-blue-300 font-semibold">{user.xp}</span>
+    <span className="text-blue-400 text-lg">XP</span>
+  </div>
+
+  {/* tTrust Badge */}
+  <div className="flex items-center gap-2 bg-purple-600/20 border border-purple-500/30 px-3 py-1 rounded-full">
+    <div className="w-5 h-5 rounded-full bg-purple-500 flex items-center justify-center text-xs font-bold text-white">
+      T
+    </div>
+    <span className="text-purple-300 font-semibold">{user.tTrust} tTRUST</span>
+  </div>
+
+</div>
+
                 </div>
               );
             })}

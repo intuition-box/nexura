@@ -20,7 +20,6 @@ export function Home() {
   className="mx-auto w-48 h-48 object-contain"
 />
 
-
         <h1 className="text-2xl sm:text-5xl font-extrabold text-white tracking-tight">
           Welcome to <span className="text-blue-400">Nexura</span>
         </h1>

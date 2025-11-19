@@ -57,14 +57,14 @@ export default function Quests() {
       id: "onetime-2",
       title: "Connect Discord",
       description: "Join our Discord community to access exclusive channels and updates",
-      reward: "25 XP + 1.0 tTRUST",
+      reward: "25 XP",
       completed: false
     },
     {
       id: "onetime-3",
       title: "Own a .trust domain",
       description: "Register your .trust domain to establish your presence on the Intuition network",
-      reward: "50 XP + 2.0 tTRUST",
+      reward: "50 XP",
       completed: false
     }
   ];
@@ -159,7 +159,7 @@ export default function Quests() {
         <div>
           <h1 className="text-3xl font-bold text-foreground mb-2">Quests</h1>
           <p className="text-muted-foreground">
-            Complete active (weekly) tasks and one-time quests to earn XP 
+            Complete active (weekly) tasks and one-time quests to earn XP ⚡
           </p>
         </div>
 
